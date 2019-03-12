@@ -1,0 +1,5 @@
+WebContent/WEB-INF/lib/mysql-connector-java-3.1.12-bin.jar
+WebContent/WEB-INF/lib/servlet-api.jar
+WebContent/WEB-INF/classes
+
+.vscode/launch.json
