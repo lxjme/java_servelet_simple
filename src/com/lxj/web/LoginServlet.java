@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lxj.dao.UserDao;
 import com.lxj.model.User;
@@ -47,6 +48,9 @@ public class LoginServlet extends HttpServlet  {
             if(UserDao.login(c, user)) {
                 // 登录成功
                 // 客户端跳转
+                HttpSession session = req.getSession();
+                session.setAttribute("currentUser", user_name);
+                
                 res.sendRedirect("main.jsp");
             } else {
                 // 登录失败
